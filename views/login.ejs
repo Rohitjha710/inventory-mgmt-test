@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="login-header">
+                <div class="logo">&#9650;</div>
+                <h2>Welcome!</h2>
+                <p>Please sign in to your account.</p>
+            </div>
+            <form action="/login" method="POST">
+                <div class="form-group">
+                    <label for="email">
+                      <i class="fa fa-envelope"></i>
+                      <input 
+                        type="email" 
+                        name="username" 
+                        id="email" 
+                        placeholder="Enter your email" 
+                        required
+                      >
+                    </label>                    
+                  </div>
+                  <div class="form-group">
+                    <label for="password">
+                      <i class="fa fa-lock"></i>
+                      <input type="password" name="password" id="password" placeholder="Enter password" required>
+                      <i class="fa fa-eye toggle-password" onclick="togglePassword(this)"></i>
+                    </label>
+                  </div>
+                  
+                <button type="submit" class="btn-yellow">
+                    Sign in <i class="fa fa-arrow-right-to-bracket"></i>
+                </button>
+                <div class="login-footer">
+                    <a href="#">Forgot password?</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function togglePassword(el) {
+            const pwdInput = el.previousElementSibling;
+            const isHidden = pwdInput.type === 'password';
+            pwdInput.type = isHidden ? 'text' : 'password';
+            el.classList.toggle('fa-eye');
+            el.classList.toggle('fa-eye-slash');
+        }
+    </script>
+</body>
+</html>
